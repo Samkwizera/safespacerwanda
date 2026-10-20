@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T16:30:00Z",
+  "title": "Design System: SafeSpace Rwanda",
+  "extensions": {
+    "colorMeta": {
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Indigo Ink",
+        "canonical": "oklch(26.0% 0.059 273.4)",
+        "tonalRamp": [
+          "oklch(15% 0.059 273.4)",
+          "oklch(26% 0.059 273.4)",
+          "oklch(38% 0.059 273.4)",
+          "oklch(49% 0.059 273.4)",
+          "oklch(61% 0.059 273.4)",
+          "oklch(72% 0.059 273.4)",
+          "oklch(84% 0.059 273.4)",
+          "oklch(95% 0.059 273.4)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(45.6% 0.050 274.1)",
+        "tonalRamp": [
+          "oklch(15% 0.050 274.1)",
+          "oklch(26% 0.050 274.1)",
+          "oklch(38% 0.050 274.1)",
+          "oklch(49% 0.050 274.1)",
+          "oklch(61% 0.050 274.1)",
+          "oklch(72% 0.050 274.1)",
+          "oklch(84% 0.050 274.1)",
+          "oklch(95% 0.050 274.1)"
+        ]
+      },
+      "ink-mist": {
+        "role": "neutral",
+        "displayName": "Mist Ink",
+        "canonical": "oklch(85.5% 0.034 276.3)",
+        "tonalRamp": [
+          "oklch(15% 0.034 276.3)",
+          "oklch(26% 0.034 276.3)",
+          "oklch(38% 0.034 276.3)",
+          "oklch(49% 0.034 276.3)",
+          "oklch(61% 0.034 276.3)",
+          "oklch(72% 0.034 276.3)",
+          "oklch(84% 0.034 276.3)",
+          "oklch(95% 0.034 276.3)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "oklch(92.6% 0.014 272.7)",
+        "tonalRamp": [
+          "oklch(15% 0.014 272.7)",
+          "oklch(26% 0.014 272.7)",
+          "oklch(38% 0.014 272.7)",
+          "oklch(49% 0.014 272.7)",
+          "oklch(61% 0.014 272.7)",
+          "oklch(72% 0.014 272.7)",
+          "oklch(84% 0.014 272.7)",
+          "oklch(95% 0.014 272.7)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(38% 0.000 89.9)",
+          "oklch(49% 0.000 89.9)",
+          "oklch(61% 0.000 89.9)",
+          "oklch(72% 0.000 89.9)",
+          "oklch(84% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(97.7% 0.005 275.0)",
+        "tonalRamp": [
+          "oklch(15% 0.005 275.0)",
+          "oklch(26% 0.005 275.0)",
+          "oklch(38% 0.005 275.0)",
+          "oklch(49% 0.005 275.0)",
+          "oklch(61% 0.005 275.0)",
+          "oklch(72% 0.005 275.0)",
+          "oklch(84% 0.005 275.0)",
+          "oklch(95% 0.005 275.0)"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Friendly Action Blue",
+        "canonical": "oklch(49.7% 0.237 269.3)",
+        "tonalRamp": [
+          "oklch(15% 0.200 269.3)",
+          "oklch(26% 0.200 269.3)",
+          "oklch(38% 0.200 269.3)",
+          "oklch(49% 0.200 269.3)",
+          "oklch(61% 0.200 269.3)",
+          "oklch(72% 0.200 269.3)",
+          "oklch(84% 0.200 269.3)",
+          "oklch(95% 0.237 269.3)"
+        ]
+      },
+      "blue-deep": {
+        "role": "primary",
+        "displayName": "Deep Action Blue",
+        "canonical": "oklch(44.4% 0.214 269.2)",
+        "tonalRamp": [
+          "oklch(15% 0.200 269.2)",
+          "oklch(26% 0.200 269.2)",
+          "oklch(38% 0.200 269.2)",
+          "oklch(49% 0.200 269.2)",
+          "oklch(61% 0.200 269.2)",
+          "oklch(72% 0.200 269.2)",
+          "oklch(84% 0.200 269.2)",
+          "oklch(95% 0.214 269.2)"
+        ]
+      },
+      "sun": {
+        "role": "secondary",
+        "displayName": "Sunshine",
+        "canonical": "oklch(86.0% 0.154 85.0)",
+        "tonalRamp": [
+          "oklch(15% 0.154 85.0)",
+          "oklch(26% 0.154 85.0)",
+          "oklch(38% 0.154 85.0)",
+          "oklch(49% 0.154 85.0)",
+          "oklch(61% 0.154 85.0)",
+          "oklch(72% 0.154 85.0)",
+          "oklch(84% 0.154 85.0)",
+          "oklch(95% 0.154 85.0)"
+        ]
+      },
+      "sun-deep": {
+        "role": "secondary",
+        "displayName": "Warm Sunshine",
+        "canonical": "oklch(83.7% 0.167 82.1)",
+        "tonalRamp": [
+          "oklch(15% 0.167 82.1)",
+          "oklch(26% 0.167 82.1)",
+          "oklch(38% 0.167 82.1)",
+          "oklch(49% 0.167 82.1)",
+          "oklch(61% 0.167 82.1)",
+          "oklch(72% 0.167 82.1)",
+          "oklch(84% 0.167 82.1)",
+          "oklch(95% 0.167 82.1)"
+        ]
+      },
+      "coral": {
+        "role": "tertiary",
+        "displayName": "Soft Coral",
+        "canonical": "oklch(73.1% 0.166 30.3)",
+        "tonalRamp": [
+          "oklch(15% 0.166 30.3)",
+          "oklch(26% 0.166 30.3)",
+          "oklch(38% 0.166 30.3)",
+          "oklch(49% 0.166 30.3)",
+          "oklch(61% 0.166 30.3)",
+          "oklch(72% 0.166 30.3)",
+          "oklch(84% 0.166 30.3)",
+          "oklch(95% 0.166 30.3)"
+        ]
+      },
+      "sky": {
+        "role": "neutral",
+        "displayName": "Sky Field",
+        "canonical": "oklch(95.5% 0.021 268.4)",
+        "tonalRamp": [
+          "oklch(15% 0.021 268.4)",
+          "oklch(26% 0.021 268.4)",
+          "oklch(38% 0.021 268.4)",
+          "oklch(49% 0.021 268.4)",
+          "oklch(61% 0.021 268.4)",
+          "oklch(72% 0.021 268.4)",
+          "oklch(84% 0.021 268.4)",
+          "oklch(95% 0.021 268.4)"
+        ]
+      },
+      "sunsoft": {
+        "role": "neutral",
+        "displayName": "Sunsoft Field",
+        "canonical": "oklch(96.5% 0.044 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0.044 89.9)",
+          "oklch(26% 0.044 89.9)",
+          "oklch(38% 0.044 89.9)",
+          "oklch(49% 0.044 89.9)",
+          "oklch(61% 0.044 89.9)",
+          "oklch(72% 0.044 89.9)",
+          "oklch(84% 0.044 89.9)",
+          "oklch(95% 0.044 89.9)"
+        ]
+      },
+      "blush": {
+        "role": "neutral",
+        "displayName": "Blush Field",
+        "canonical": "oklch(94.4% 0.028 31.1)",
+        "tonalRamp": [
+          "oklch(15% 0.028 31.1)",
+          "oklch(26% 0.028 31.1)",
+          "oklch(38% 0.028 31.1)",
+          "oklch(49% 0.028 31.1)",
+          "oklch(61% 0.028 31.1)",
+          "oklch(72% 0.028 31.1)",
+          "oklch(84% 0.028 31.1)",
+          "oklch(95% 0.028 31.1)"
+        ]
+      },
+      "mint": {
+        "role": "neutral",
+        "displayName": "Mint Field",
+        "canonical": "oklch(94.6% 0.026 161.9)",
+        "tonalRamp": [
+          "oklch(15% 0.026 161.9)",
+          "oklch(26% 0.026 161.9)",
+          "oklch(38% 0.026 161.9)",
+          "oklch(49% 0.026 161.9)",
+          "oklch(61% 0.026 161.9)",
+          "oklch(72% 0.026 161.9)",
+          "oklch(84% 0.026 161.9)",
+          "oklch(95% 0.026 161.9)"
+        ]
+      },
+      "error": {
+        "role": "error",
+        "displayName": "Alert Red",
+        "canonical": "oklch(48.0% 0.163 31.6)",
+        "tonalRamp": [
+          "oklch(15% 0.163 31.6)",
+          "oklch(26% 0.163 31.6)",
+          "oklch(38% 0.163 31.6)",
+          "oklch(49% 0.163 31.6)",
+          "oklch(61% 0.163 31.6)",
+          "oklch(72% 0.163 31.6)",
+          "oklch(84% 0.163 31.6)",
+          "oklch(95% 0.163 31.6)"
+        ]
+      },
+      "error-border": {
+        "role": "error",
+        "displayName": "Alert Border",
+        "canonical": "oklch(54.1% 0.182 31.5)",
+        "tonalRamp": [
+          "oklch(15% 0.182 31.5)",
+          "oklch(26% 0.182 31.5)",
+          "oklch(38% 0.182 31.5)",
+          "oklch(49% 0.182 31.5)",
+          "oklch(61% 0.182 31.5)",
+          "oklch(72% 0.182 31.5)",
+          "oklch(84% 0.182 31.5)",
+          "oklch(95% 0.182 31.5)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Homepage hero headline only."
+      },
+      "headline-page": {
+        "displayName": "Page Headline",
+        "purpose": "Inner-page hero titles and the footer tagline."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Every section heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card, pillar and event titles."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "Resource cards and definition terms."
+      },
+      "body-lead": {
+        "displayName": "Body Lead",
+        "purpose": "Intros and story paragraphs, 56-62ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Card copy and descriptions."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, form labels, meta lines."
+      }
+    },
+    "shadows": [
+      {
+        "name": "header-lift",
+        "value": "0 1px 0 #e3e6f0, 0 6px 20px -12px rgba(27,33,64,.18)",
+        "purpose": "Sticky header once scrolled past 8px; the only shadow in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Press feedback, hero settle, mobile menu entrance."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Declared token for on-screen movement; not currently used by a component."
+      },
+      {
+        "name": "press",
+        "value": "transform: scale(0.97) over 160ms ease-out",
+        "purpose": "Active state on every pressable control (.press)."
+      },
+      {
+        "name": "hover-colour",
+        "value": "200ms ease",
+        "purpose": "Colour-only hover on buttons, links, nav and inputs."
+      },
+      {
+        "name": "settle",
+        "value": "700ms ease-out; opacity 0 to 1, translateY 12px to 0; mark delayed 120ms",
+        "purpose": "The one entrance: hero and page-hero content on load."
+      },
+      {
+        "name": "breathe",
+        "value": "12s ease-in-out infinite; scale 1 to 1.045",
+        "purpose": "Hero mark inhale and exhale (6s each way)."
+      },
+      {
+        "name": "menu-sheet",
+        "value": "220ms ease-out in (8px drop + fade), 150ms fade out",
+        "purpose": "Mobile navigation sheet."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animations and transitions reduced to 0.001ms",
+        "purpose": "Global prefers-reduced-motion override; the breathing mark stops."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action in a group: join, subscribe, get notified.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">Join Our Community <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 9999px; border: none; font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background-color 200ms ease, color 200ms ease, box-shadow 200ms ease; background: var(--color-blue, #3347e6); color: #fff; } .ds-btn-primary svg { transition: transform 200ms ease-out; } .ds-btn-primary:hover { background: var(--color-blue-deep, #2a3bc7); } .ds-btn-primary:hover svg { transform: translateX(2px); } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 3px solid var(--color-blue, #3347e6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Quiet companion route beside a primary, or a section's 'see all'.",
+      "html": "<a href=\"#\" class=\"ds-btn-secondary\">Read our story</a>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 9999px; border: none; font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background-color 200ms ease, color 200ms ease, box-shadow 200ms ease; background: transparent; color: var(--color-ink, #1b2140); box-shadow: inset 0 0 0 1.5px rgba(27,33,64,0.2); } .ds-btn-secondary:hover { box-shadow: inset 0 0 0 1.5px var(--color-ink, #1b2140); } .ds-btn-secondary:active { transform: scale(0.97); } .ds-btn-secondary:focus-visible { outline: 3px solid var(--color-blue, #3347e6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Sun Button",
+      "kind": "button",
+      "refersTo": "button-sun",
+      "description": "The action on ink grounds, such as the dark newsletter panel.",
+      "html": "<div class=\"ds-ink-ground\"><button class=\"ds-btn-sun\">Subscribe</button></div>",
+      "css": ".ds-ink-ground { background: var(--color-ink, #1b2140); padding: 24px; border-radius: 24px; } .ds-btn-sun { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 9999px; border: none; font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background-color 200ms ease, color 200ms ease, box-shadow 200ms ease; background: var(--color-sun, #ffc845); color: var(--color-ink, #1b2140); } .ds-btn-sun:hover { background: #ffbd1f; } .ds-btn-sun:active { transform: scale(0.97); } .ds-btn-sun:focus-visible { outline: 3px solid var(--color-sun, #ffc845); outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Labelled form field for join, volunteer, partner and contact forms.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-name\">Your name</label><input id=\"ds-name\" class=\"ds-input\" placeholder=\"First and last name\"><p class=\"ds-field-hint\">So we know what to call you.</p></div>",
+      "css": ".ds-field { font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); max-width: 360px; } .ds-field-label { font-size: 15px; font-weight: 700; color: var(--color-ink, #1b2140); } .ds-input { display: block; margin-top: 8px; width: 100%; box-sizing: border-box; border-radius: 12px; border: 1.5px solid var(--color-line, #e3e6f0); background: #fff; padding: 14px 16px; font: inherit; font-size: 16px; color: var(--color-ink, #1b2140); transition: border-color 200ms, box-shadow 200ms; } .ds-input::placeholder { color: rgba(78,85,115,0.7); } .ds-input:hover { border-color: #c9cee6; } .ds-input:focus { outline: none; border-color: var(--color-blue, #3347e6); box-shadow: 0 0 0 4px rgba(51,71,230,0.15); } .ds-field-hint { margin: 6px 0 0; font-size: 14px; color: var(--color-ink-soft, #4e5573); }"
+    },
+    {
+      "name": "Email Sign-up",
+      "kind": "input",
+      "refersTo": "input-email-pill",
+      "description": "Pill email input paired with a pill submit; leads the homepage hero.",
+      "html": "<form class=\"ds-signup\" onsubmit=\"return false\"><input class=\"ds-signup-input\" type=\"email\" placeholder=\"Your email address\" aria-label=\"Email address\"><button class=\"ds-signup-btn\">Keep me posted</button></form>",
+      "css": ".ds-signup { display: flex; flex-wrap: wrap; gap: 10px; font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); max-width: 520px; } .ds-signup-input { flex: 1 1 220px; min-height: 48px; border-radius: 9999px; border: 1.5px solid var(--color-line, #e3e6f0); background: #fff; padding: 0 20px; font: inherit; font-size: 16px; color: var(--color-ink, #1b2140); transition: border-color 200ms, box-shadow 200ms; } .ds-signup-input:hover { border-color: #c9cee6; } .ds-signup-input:focus { outline: none; border-color: var(--color-blue, #3347e6); box-shadow: 0 0 0 4px rgba(51,71,230,0.15); } .ds-signup-btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 24px; border-radius: 9999px; border: none; font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); font-size: 16px; font-weight: 700; text-decoration: none; cursor: pointer; transition: transform 160ms cubic-bezier(0.23,1,0.32,1), background-color 200ms ease, color 200ms ease, box-shadow 200ms ease; padding: 0 28px; background: var(--color-blue, #3347e6); color: #fff; } .ds-signup-btn:hover { background: var(--color-blue-deep, #2a3bc7); } .ds-signup-btn:active { transform: scale(0.97); } .ds-signup-btn:focus-visible { outline: 3px solid var(--color-blue, #3347e6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Desktop header nav: pill links, current page in a Sky pill.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-link\" aria-current=\"page\">Home</a><a href=\"#\" class=\"ds-nav-link\">About</a><a href=\"#\" class=\"ds-nav-link\">What We Do</a><a href=\"#\" class=\"ds-nav-link\">Community</a><a href=\"#\" class=\"ds-nav-link\">Resources</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 4px; font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); } .ds-nav-link { border-radius: 9999px; padding: 8px 14px; font-size: 15px; font-weight: 600; color: var(--color-ink-soft, #4e5573); text-decoration: none; transition: color 200ms; } .ds-nav-link:hover { color: var(--color-ink, #1b2140); } .ds-nav-link[aria-current=page] { background: var(--color-sky, #eaf0ff); color: var(--color-blue, #3347e6); } .ds-nav-link:focus-visible { outline: 3px solid var(--color-blue, #3347e6); outline-offset: 3px; border-radius: 9999px; }"
+    },
+    {
+      "name": "Door Panels",
+      "kind": "card",
+      "refersTo": "door-panel",
+      "description": "The three ways in: Join (blue), Volunteer (sun), Partner (ink). Each panel is one link.",
+      "html": "<ul class=\"ds-doors\"><li class=\"ds-door ds-door-blue\"><h3>Join the Community</h3><p>Meet like-minded young people and discover opportunities to connect.</p><a href=\"#\">Get started <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></li><li class=\"ds-door ds-door-sun\"><h3>Become a Volunteer</h3><p>Help organise activities and build stronger communities.</p><a href=\"#\">Get started <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></li><li class=\"ds-door ds-door-ink\"><h3>Partner With Us</h3><p>Create meaningful opportunities for young people.</p><a href=\"#\">Get started <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></li></ul>",
+      "css": ".ds-doors { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; list-style: none; margin: 0; padding: 0; font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); } .ds-door { position: relative; display: flex; flex-direction: column; min-height: 220px; border-radius: 24px; padding: 28px; transition: transform 150ms ease-out; } .ds-door:active { transform: scale(0.99); } .ds-door h3 { margin: 0; font-size: 1.7rem; font-weight: 800; line-height: 1.25; letter-spacing: -0.025em; } .ds-door p { margin: 12px 0 0; line-height: 1.625; } .ds-door a { margin-top: auto; padding-top: 32px; display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: inherit; text-decoration: none; } .ds-door a::after { content: ''; position: absolute; inset: 0; border-radius: 24px; } .ds-door a svg { transition: transform 200ms ease-out; } .ds-door:hover a svg { transform: translateX(4px); } .ds-door a:focus-visible { outline: none; } .ds-door:focus-within { outline: 3px solid var(--color-blue, #3347e6); outline-offset: 3px; } .ds-door-blue { background: var(--color-blue, #3347e6); color: #fff; } .ds-door-blue p { color: rgba(255,255,255,0.85); } .ds-door-sun { background: var(--color-sun, #ffc845); color: var(--color-ink, #1b2140); } .ds-door-sun p { color: rgba(27,33,64,0.75); } .ds-door-ink { background: var(--color-ink, #1b2140); color: #fff; } .ds-door-ink p { color: #c9cee6; }"
+    },
+    {
+      "name": "Resource Card",
+      "kind": "card",
+      "refersTo": "card-soft",
+      "description": "Shape-field thumbnail, title that turns blue on hover, soft meta line. No frame.",
+      "html": "<article class=\"ds-res\"><div class=\"ds-res-field\" aria-hidden=\"true\"><svg viewBox=\"0 0 400 300\" preserveAspectRatio=\"xMidYMid slice\"><rect x=\"92\" y=\"60\" width=\"96\" height=\"190\" rx=\"48\" fill=\"#3347E6\"/><circle cx=\"270\" cy=\"190\" r=\"60\" fill=\"#FF7A66\"/></svg></div><h3><a href=\"#\">Making sense of stress</a></h3><p>Exams, family expectations, money, the future. Here is what stress does in your body.</p><p class=\"ds-res-meta\">Stress and Anxiety · 5 min read</p></article>",
+      "css": ".ds-res { position: relative; max-width: 340px; font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); } .ds-res-field { aspect-ratio: 16/10; border-radius: 16px; overflow: hidden; background: var(--color-blush, #ffe6e1); } .ds-res-field svg { width: 100%; height: 100%; display: block; } .ds-res h3 { margin: 20px 0 0; font-size: 1.25rem; font-weight: 800; line-height: 1.375; letter-spacing: -0.025em; } .ds-res h3 a { color: var(--color-ink, #1b2140); text-decoration: none; transition: color 200ms; } .ds-res h3 a::after { content: ''; position: absolute; inset: 0; } .ds-res:hover h3 a { color: var(--color-blue, #3347e6); } .ds-res h3 a:focus-visible { outline: 3px solid var(--color-blue, #3347e6); outline-offset: 3px; } .ds-res p { margin: 8px 0 0; line-height: 1.625; color: var(--color-ink-soft, #4e5573); } .ds-res .ds-res-meta { margin-top: 12px; font-size: 14px; font-weight: 700; }"
+    },
+    {
+      "name": "Breathing Mark",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "The signature: sun circle and blue capsule overlapping, shared space filled ink, breathing on a 12s cycle. Hero, 404 and logo only.",
+      "html": "<svg class=\"ds-mark\" viewBox=\"0 0 400 320\" aria-hidden=\"true\"><defs><clipPath id=\"ds-mark-c\"><circle cx=\"150\" cy=\"170\" r=\"120\"/></clipPath></defs><g class=\"ds-mark-g\"><circle cx=\"150\" cy=\"170\" r=\"120\" fill=\"#FFC845\"/><rect x=\"200\" y=\"20\" width=\"160\" height=\"290\" rx=\"80\" fill=\"#3347E6\"/><rect x=\"200\" y=\"20\" width=\"160\" height=\"290\" rx=\"80\" fill=\"#1B2140\" clip-path=\"url(#ds-mark-c)\"/></g></svg>",
+      "css": ".ds-mark { width: 100%; max-width: 320px; display: block; } .ds-mark-g { transform-origin: center; transform-box: fill-box; animation: ds-breathe 12s ease-in-out infinite; } @keyframes ds-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.045); } } @media (prefers-reduced-motion: reduce) { .ds-mark-g { animation: none; } }"
+    },
+    {
+      "name": "Disclaimer",
+      "kind": "custom",
+      "refersTo": "disclaimer",
+      "description": "Community-not-clinic note, wherever support is discussed.",
+      "html": "<aside class=\"ds-disclaimer\" aria-label=\"Important information about our support\"><p class=\"ds-disclaimer-title\">We’re a community, not a clinic.</p><p>SafeSpace Rwanda offers community and educational support. It does not replace qualified mental health professionals, and we can’t respond to emergencies.</p></aside>",
+      "css": ".ds-disclaimer { font-family: var(--font-sans, Figtree, ui-sans-serif, system-ui, sans-serif); border-radius: 16px; background: var(--color-sunsoft, #fff3d3); padding: 24px 28px; max-width: 640px; } .ds-disclaimer p { margin: 6px 0 0; font-size: 15px; line-height: 1.625; color: var(--color-ink-soft, #4e5573); } .ds-disclaimer .ds-disclaimer-title { margin: 0; font-size: 16px; font-weight: 800; color: var(--color-ink, #1b2140); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Two Forms, One Shared Space",
+    "overview": "A calm, friendly youth-wellbeing home, played straight at a high craft level. The page is white paper with large soft colour fields laid edge to edge (sky, sunsoft, blush, mint, mist), and deep indigo ink for every word. One bright friendly blue carries action; sunshine yellow carries the signature shape. In place of illustration the world uses only two geometric forms, a circle and a capsule, that overlap or sit beside each other. Where they overlap at hero scale, the shared space is filled ink: two people, one shared space.\n\nDensity is generous and quiet. Sections breathe on 80 to 112px of vertical rhythm, headings are heavy and tightly tracked, body copy is soft ink at relaxed leading. Nothing floats, glows or reveals on scroll. The hero settles in once on load, controls answer a press, and the hero mark breathes slowly. Everything else stays still.\n\nThe world refuses the pastel-blob template: blurred orbs, eyebrow pills above headings, floating badges, marquees and per-section scroll reveals. It is never themed on sport; sport is content, not the look.",
+    "keyCharacteristics": [
+      "White ground, full-bleed soft colour fields per section, deep indigo ink.",
+      "Figtree throughout; extra-bold (800) headings with negative tracking.",
+      "Circle and capsule shapes as the only illustration, in flat brand colours.",
+      "Pill buttons and pill nav, 16px soft cards, 24px feature panels and image frames.",
+      "Flat surfaces; depth comes from colour fields, not shadows.",
+      "One entrance, press feedback, colour-only hovers, one slow breathing mark."
+    ],
+    "rules": [
+      {
+        "name": "The One Blue Rule",
+        "body": "Blue is the only colour that means \"do this\". Sunshine buttons appear only on ink grounds; light buttons only on coloured fields.",
+        "section": "colors"
+      },
+      {
+        "name": "The Field, Not Fill Rule",
+        "body": "Pastels are used as whole section or card fields. They are never tints behind small chips or glows behind headings.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Eyebrow Rule",
+        "body": "Headings stand alone. No uppercase kicker, pill or small label sits above a heading; a soft intro paragraph below is the only companion.",
+        "section": "typography"
+      },
+      {
+        "name": "The Balanced Heading Rule",
+        "body": "All headings take -0.025em tracking or tighter and `text-wrap: balance`; paragraphs take `text-wrap: pretty`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Field Rule",
+        "body": "Cards, panels and images sit flat. If something needs separating, give it a different field colour.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Two Forms Rule",
+        "body": "Only circles and capsules, in flat brand colours. No blobs, blurs, gradients, outlines or other shapes.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Mark Is Reserved Rule",
+        "body": "The overlapping mark with its ink intersection belongs to the hero, the 404 and the logo. Placeholder fields use the non-overlapping arrangements.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do give each section its own full-bleed field (paper, sky, sunsoft, blush, mint, mist or ink) and keep 80px, then 112px, of vertical padding.",
+      "Do use Action Blue (#3347e6) for the one primary action in any group; use the secondary ring button beside it.",
+      "Do set headings in Figtree 800 with negative tracking and let a soft-ink intro follow them.",
+      "Do fill any missing photo with a shape field (circle and capsule on a pastel field) carrying the photo's alt text.",
+      "Do keep motion to the one hero settle (700ms, out curve), 0.97 press feedback, colour-only hovers and the breathing mark, all removed under reduced motion.",
+      "Do keep text inputs at 16px and touch targets at 44px or larger."
+    ],
+    "donts": [
+      "Don't add eyebrows, kickers or pill labels above headings.",
+      "Don't use blurred orbs, gradient blobs, glows, floating badges or marquees.",
+      "Don't add per-section scroll reveals or staggered entrances.",
+      "Don't put shadows on cards or panels; the header lift is the only shadow.",
+      "Don't theme anything on sport or basketball: no balls, courts or jerseys as decoration.",
+      "Don't use Coral or the pastels for text or buttons."
+    ]
+  }
+}
