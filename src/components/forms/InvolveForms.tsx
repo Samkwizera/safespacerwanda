@@ -6,9 +6,9 @@ import { useFormSubmit } from "./useFormSubmit";
 import { Consent, FormError, FormSuccess, Honeypot, SelectField, SubmitButton, TextArea, TextField } from "./Fields";
 
 const privacyNote = (
-  <p className="rounded-2xl bg-cream px-4 py-3 text-sm leading-relaxed text-muted">
+  <p className="rounded-xl bg-mist px-4 py-3 text-sm leading-relaxed text-ink-soft">
     Please don&apos;t share personal health details here. This form is just for getting to know you. If you need
-    support, see our <Link href="/resources/reaching-out-for-support" className="text-forest underline underline-offset-2">guide to reaching out</Link>.
+    support, see our <Link href="/resources/reaching-out-for-support" className="font-semibold text-blue underline">guide to reaching out</Link>.
   </p>
 );
 
@@ -26,12 +26,12 @@ export function JoinForm() {
         <TextField label="Where are you based?" name="location" placeholder="e.g. Kigali" optional error={e.location} />
       </div>
       <fieldset>
-        <legend className="text-sm font-semibold text-forest">What sounds fun to you? <span className="font-normal text-muted">(optional)</span></legend>
+        <legend className="text-[15px] font-bold text-ink">What sounds fun to you? <span className="font-normal text-ink-soft">(optional)</span></legend>
         <div className="mt-3 flex flex-wrap gap-2">
           {["Sports meetups", "Conversations", "Community events", "Awareness work"].map((i) => (
             <label key={i} className="cursor-pointer">
               <input type="checkbox" name="interests" value={i} className="peer sr-only" />
-              <span className="inline-block rounded-full border border-forest/20 bg-white px-4 py-2 text-sm transition peer-checked:border-forest peer-checked:bg-forest peer-checked:text-cream peer-focus-visible:ring-4 peer-focus-visible:ring-sage">
+              <span className="press inline-block rounded-full border-[1.5px] border-line bg-white px-4 py-2 text-[15px] font-semibold text-ink-soft hover:border-[#c9cee6] peer-checked:border-blue peer-checked:bg-blue peer-checked:text-white peer-focus-visible:ring-4 peer-focus-visible:ring-blue/25">
                 {i}
               </span>
             </label>

@@ -31,7 +31,7 @@ export default function TermsPage() {
       <h2>Contact</h2>
       <p>
         Questions about these terms? Email{" "}
-        <a href={`mailto:${site.email}`} className="font-semibold text-forest underline">{site.email}</a>.
+        <a href={`mailto:${site.email}`} className="font-semibold">{site.email}</a>.
       </p>
     </LegalPage>
   );

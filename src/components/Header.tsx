@@ -16,7 +16,7 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -34,16 +34,16 @@ export function Header() {
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5">
-      <a href="#main" className="sr-only rounded-full bg-forest px-4 py-2 text-cream focus:not-sr-only focus:absolute focus:left-4 focus:top-4">
+    <header
+      className={cn(
+        "sticky top-0 z-50 bg-white transition-shadow duration-200",
+        scrolled && !open && "shadow-[0_1px_0_#e3e6f0,0_6px_20px_-12px_rgba(27,33,64,.18)]",
+      )}
+    >
+      <a href="#main" className="sr-only rounded-full bg-blue px-4 py-2 font-bold text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-3">
         Skip to content
       </a>
-      <div
-        className={cn(
-          "relative z-10 mx-auto flex max-w-7xl items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500 sm:px-5",
-          scrolled || open ? "bg-cream/85 shadow-[0_8px_30px_-12px_rgba(23,60,53,.25)] ring-1 ring-forest/5 backdrop-blur-xl" : "bg-transparent",
-        )}
-      >
+      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
         <Logo />
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-1">
@@ -53,13 +53,10 @@ export function Header() {
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   className={cn(
-                    "relative rounded-full px-4 py-2 text-[15px] font-medium transition-colors",
-                    isActive(item.href) ? "text-forest" : "text-charcoal/75 hover:text-forest",
+                    "rounded-full px-3.5 py-2 text-[15px] font-semibold transition-colors duration-200",
+                    isActive(item.href) ? "bg-sky text-blue" : "text-ink-soft hover:text-ink",
                   )}
                 >
-                  {isActive(item.href) && (
-                    <motion.span layoutId="nav-pill" className="absolute inset-0 -z-10 rounded-full bg-sage-soft" transition={{ type: "spring", bounce: 0.2, duration: 0.5 }} />
-                  )}
                   {item.label}
                 </Link>
               </li>
@@ -67,19 +64,19 @@ export function Header() {
           </ul>
         </nav>
         <div className="flex items-center gap-2">
-          <Button href="/get-involved#join" className="hidden px-5 py-2.5 text-sm sm:inline-flex">
-            Join Our Community
-          </Button>
+          <span className="hidden sm:block">
+            <Button href="/get-involved#join" size="sm">Join Our Community</Button>
+          </span>
           <button
             type="button"
             onClick={() => setOpen((o) => !o)}
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="relative grid h-11 w-11 place-items-center rounded-full bg-forest text-cream lg:hidden"
+            className="press relative grid h-11 w-11 place-items-center rounded-full bg-sky text-ink lg:hidden"
           >
-            <span aria-hidden className={cn("absolute h-0.5 w-5 rounded bg-current transition-all duration-300", open ? "rotate-45" : "-translate-y-[5px]")} />
-            <span aria-hidden className={cn("absolute h-0.5 w-5 rounded bg-current transition-all duration-300", open ? "-rotate-45" : "translate-y-[5px]")} />
+            <span aria-hidden className={cn("absolute h-0.5 w-5 rounded bg-current transition-transform duration-200 ease-out", open ? "rotate-45" : "-translate-y-[4px]")} />
+            <span aria-hidden className={cn("absolute h-0.5 w-5 rounded bg-current transition-transform duration-200 ease-out", open ? "-rotate-45" : "translate-y-[4px]")} />
           </button>
         </div>
       </div>
@@ -88,37 +85,30 @@ export function Header() {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-0 bg-forest lg:hidden on-dark"
-            initial={reduce ? { opacity: 0 } : { clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
-            animate={reduce ? { opacity: 1 } : { clipPath: "circle(150% at calc(100% - 40px) 40px)" }}
-            exit={reduce ? { opacity: 0 } : { clipPath: "circle(0% at calc(100% - 40px) 40px)" }}
-            transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
+            className="fixed inset-x-0 bottom-0 top-[72px] overflow-y-auto border-t border-line bg-white lg:hidden"
+            initial={{ opacity: 0, transform: reduce ? "none" : "translateY(-8px)" }}
+            animate={{ opacity: 1, transform: "translateY(0px)" }}
+            exit={{ opacity: 0, transition: { duration: 0.15 } }}
+            transition={{ duration: 0.22, ease: [0.23, 1, 0.32, 1] }}
           >
-            <nav aria-label="Mobile" className="flex h-full flex-col justify-between px-7 pb-10 pt-28">
-              <ul className="space-y-1">
-                {nav.map((item, i) => (
-                  <motion.li
-                    key={item.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.15 + i * 0.05, duration: 0.4 }}
-                  >
+            <nav aria-label="Mobile" className="flex min-h-full flex-col justify-between px-5 pb-8 pt-4">
+              <ul>
+                {nav.map((item) => (
+                  <li key={item.href} className="border-b border-line">
                     <Link
                       href={item.href}
                       aria-current={isActive(item.href) ? "page" : undefined}
-                      className={cn("block py-2 font-display text-4xl font-extrabold tracking-tight", isActive(item.href) ? "text-peach" : "text-cream")}
+                      className={cn("block py-4 text-2xl font-extrabold tracking-[-0.02em]", isActive(item.href) ? "text-blue" : "text-ink")}
                     >
                       {item.label}
                     </Link>
-                  </motion.li>
+                  </li>
                 ))}
               </ul>
-              <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
-                <Button href="/get-involved#join" variant="peach" className="w-full justify-center py-4">
-                  Join Our Community
-                </Button>
-                <p className="mt-6 text-center text-sm text-sage">A place to belong. A space to be yourself.</p>
-              </motion.div>
+              <div className="pt-8">
+                <Button href="/get-involved#join" className="w-full">Join Our Community</Button>
+                <p className="mt-5 text-center text-[15px] text-ink-soft">A place to belong. A space to be yourself.</p>
+              </div>
             </nav>
           </motion.div>
         )}

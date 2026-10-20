@@ -44,7 +44,7 @@ export default function PrivacyPage() {
       <h2>Your choices</h2>
       <p>
         You can ask to see, correct or delete your information at any time by emailing{" "}
-        <a href={`mailto:${site.email}`} className="font-semibold text-forest underline">{site.email}</a>.
+        <a href={`mailto:${site.email}`} className="font-semibold">{site.email}</a>.
       </p>
       <h2>Changes</h2>
       <p>If we update this policy, we&apos;ll change the date at the top of this page.</p>

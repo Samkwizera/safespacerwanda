@@ -1,50 +1,62 @@
-import { Megaphone, MessageCircleHeart, Sprout } from "lucide-react";
-import { Basketball } from "../BrandIcons";
 import { images } from "@/content/images";
+import { cn } from "@/lib/cn";
 import { Photo } from "../Photo";
-import { Reveal } from "../Reveal";
 import { Container, SectionHeading } from "../Section";
 
 export const pillars = [
-  { title: "Move Together", icon: Basketball, image: images.move, accent: "bg-sage",
+  { title: "Move Together", image: images.move, dot: "bg-blue",
     text: "Using sports, basketball and physical activity to encourage connection, confidence and emotional wellbeing." },
-  { title: "Talk Freely", icon: MessageCircleHeart, image: images.talk, accent: "bg-peach",
+  { title: "Talk Freely", image: images.talk, dot: "bg-coral",
     text: "Creating supportive spaces where young people can talk openly about mental wellness, without judgement." },
-  { title: "Grow Together", icon: Sprout, image: images.grow, accent: "bg-sage",
+  { title: "Grow Together", image: images.grow, dot: "bg-[#2fa36b]",
     text: "Helping young people build friendships, confidence, resilience and a stronger sense of belonging." },
-  { title: "Raise Awareness", icon: Megaphone, image: images.aware, accent: "bg-peach",
+  { title: "Raise Awareness", image: images.aware, dot: "bg-sun",
     text: "Promoting mental health education, challenging stigma and encouraging healthy conversations in our communities." },
 ];
 
-export function Pillars({ heading = true }: { heading?: boolean }) {
+/** The four pillars as a calm list: heading on the left, rows on the right. */
+export function Pillars() {
   return (
-    <section aria-labelledby={heading ? "pillars-title" : undefined} className="py-20 sm:py-28">
-      <Container>
-        {heading && (
-          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <SectionHeading eyebrow="What we do" title={<span id="pillars-title">Four ways we make space for each other.</span>} />
-            <Reveal delay={0.1} className="max-w-sm text-lg text-muted">
-              Simple ideas, done together. Each one is an invitation to show up as you are.
-            </Reveal>
-          </div>
-        )}
-        <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {pillars.map((p, i) => (
-            <Reveal as="li" key={p.title} delay={i * 0.08} className="group flex h-full flex-col rounded-[2rem] bg-white p-3 ring-1 ring-forest/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-30px_rgba(23,60,53,.45)]">
-                <div className="relative overflow-hidden rounded-[1.6rem]">
-                  <Photo slot={p.image} className="aspect-[4/3.2] !rounded-[1.6rem] transition-transform duration-700 group-hover:scale-[1.04]" sizes="(min-width:1024px) 25vw, (min-width:640px) 50vw, 100vw" />
-                  <span className={`absolute left-4 top-4 grid h-12 w-12 place-items-center rounded-2xl ${p.accent} text-forest shadow-sm transition-transform duration-500 group-hover:rotate-[-8deg]`}>
-                    <p.icon className="h-5 w-5" aria-hidden />
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col px-4 pb-5 pt-6">
-                  <span className="text-xs font-semibold tracking-[.2em] text-muted">0{i + 1}</span>
-                  <h3 className="mt-2 text-2xl font-extrabold text-forest">{p.title}</h3>
-                  <p className="mt-3 leading-relaxed text-muted">{p.text}</p>
-                </div>
-              </Reveal>
+    <section aria-labelledby="pillars-title" className="py-20 sm:py-28">
+      <Container className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+        <div className="lg:col-span-5">
+          <SectionHeading id="pillars-title" title="Four ways we make space for each other."
+            intro="Simple ideas, done together. Each one is an invitation to show up as you are." />
+        </div>
+        <ul className="divide-y divide-line border-y border-line lg:col-span-7">
+          {pillars.map((p) => (
+            <li key={p.title} className="grid gap-2 py-7 sm:grid-cols-[2.25rem_1fr] sm:gap-x-4">
+              <span aria-hidden className={cn("mt-1.5 hidden h-5 w-5 rounded-full sm:block", p.dot)} />
+              <div>
+                <h3 className="flex items-center gap-3 text-2xl font-extrabold text-ink">
+                  <span aria-hidden className={cn("h-4 w-4 shrink-0 rounded-full sm:hidden", p.dot)} />
+                  {p.title}
+                </h3>
+                <p className="mt-2 max-w-[56ch] text-[17px] leading-relaxed text-ink-soft">{p.text}</p>
+              </div>
+            </li>
           ))}
         </ul>
+      </Container>
+    </section>
+  );
+}
+
+/** Pillars with a photo slot each, alternating sides, for the What We Do page. */
+export function PillarFeatures() {
+  return (
+    <section aria-label="Our four pillars" className="py-16 sm:py-24">
+      <Container className="space-y-16 sm:space-y-24">
+        {pillars.map((p, i) => (
+          <article key={p.title} className="grid items-center gap-8 md:grid-cols-2 md:gap-14">
+            <Photo slot={p.image} className={cn("aspect-[4/3]", i % 2 === 1 && "md:order-2")} sizes="(min-width:768px) 50vw, 100vw" />
+            <div>
+              <span aria-hidden className={cn("block h-5 w-5 rounded-full", p.dot)} />
+              <h2 className="mt-5 text-[2rem] font-extrabold leading-[1.1] text-ink sm:text-[2.6rem]">{p.title}</h2>
+              <p className="mt-4 max-w-[48ch] text-lg leading-relaxed text-ink-soft">{p.text}</p>
+            </div>
+          </article>
+        ))}
       </Container>
     </section>
   );

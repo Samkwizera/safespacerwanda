@@ -1,3 +1,5 @@
+import type { Tone } from "@/components/Shapes";
+
 /**
  * Educational resources. Content is general wellbeing education and is not
  * medical advice. Have a qualified professional review it before launch.
@@ -16,7 +18,7 @@ export type Resource = {
   title: string;
   summary: string;
   readMinutes: number;
-  tone: "sage" | "peach" | "forest";
+  tone: Tone;
   body: { heading?: string; paragraphs?: string[]; list?: string[] }[];
 };
 
@@ -36,7 +38,7 @@ export const resources: Resource[] = [
     title: "Mental health is something we all have",
     summary: "Mental health isn't only about illness. It's about how we think, feel and connect, and it changes over time for everyone.",
     readMinutes: 4,
-    tone: "sage",
+    tone: "mint",
     body: [
       {
         paragraphs: [
@@ -75,7 +77,7 @@ export const resources: Resource[] = [
     title: "Making sense of stress",
     summary: "Exams, family expectations, money, the future. Here's what stress does in your body, and some gentle ways to ease it.",
     readMinutes: 5,
-    tone: "peach",
+    tone: "blush",
     body: [
       {
         paragraphs: [
@@ -115,7 +117,7 @@ export const resources: Resource[] = [
     title: "Small habits, real difference",
     summary: "You don't need a perfect routine. A few steady habits around sleep, movement and connection can help you feel more grounded.",
     readMinutes: 4,
-    tone: "forest",
+    tone: "sky",
     body: [
       {
         paragraphs: [
@@ -146,7 +148,7 @@ export const resources: Resource[] = [
     title: "Finding your people",
     summary: "Loneliness is more common than it looks. Here are some honest ideas for building connection, one step at a time.",
     readMinutes: 5,
-    tone: "peach",
+    tone: "blush",
     body: [
       {
         paragraphs: [
@@ -176,7 +178,7 @@ export const resources: Resource[] = [
     title: "Why moving together helps",
     summary: "Sport is more than fitness. Playing with others can lift your mood, build confidence and create friendships that last.",
     readMinutes: 4,
-    tone: "sage",
+    tone: "mint",
     body: [
       {
         paragraphs: [
@@ -206,7 +208,7 @@ export const resources: Resource[] = [
     title: "Reaching out for support",
     summary: "Not sure who to talk to, or how to start? Here's a gentle guide to asking for help.",
     readMinutes: 5,
-    tone: "forest",
+    tone: "sky",
     body: [
       {
         paragraphs: [

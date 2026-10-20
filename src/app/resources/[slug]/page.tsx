@@ -3,8 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock } from "lucide-react";
 import { Disclaimer } from "@/components/Disclaimer";
-import { Reveal } from "@/components/Reveal";
-import { Container, Eyebrow } from "@/components/Section";
+import { Container } from "@/components/Section";
 import { ResourceCard } from "@/components/sections/ResourceCard";
 import { getResource, resources } from "@/content/resources";
 
@@ -27,23 +26,23 @@ export default async function ResourcePage({ params }: Params) {
 
   return (
     <article>
-      <header className="relative overflow-hidden pb-14 pt-36 sm:pt-44">
-        <div aria-hidden className="absolute -right-20 top-10 h-80 w-80 animate-float-slow rounded-full bg-peach/70 blur-3xl" />
-        <Container className="relative max-w-3xl">
-          <Link href="/resources" className="inline-flex items-center gap-2 text-sm font-semibold text-forest hover:underline">
-            <ArrowLeft className="h-4 w-4" aria-hidden /> All resources
+      <header className="bg-sunsoft pb-14 pt-10 sm:pb-20 sm:pt-14">
+        <Container narrow>
+          <Link href="/resources" className="group inline-flex items-center gap-2 text-[15px] font-bold text-blue">
+            <ArrowLeft className="h-4 w-4 transition-transform duration-200 ease-out [@media(hover:hover)]:group-hover:-translate-x-0.5" aria-hidden /> All resources
           </Link>
-          <Reveal className="mt-8">
-            <Eyebrow>{r.category}</Eyebrow>
-            <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] text-forest sm:text-6xl">{r.title}</h1>
-            <p className="mt-6 text-xl leading-relaxed text-muted">{r.summary}</p>
-            <p className="mt-6 inline-flex items-center gap-2 text-sm text-muted"><Clock className="h-4 w-4" aria-hidden /> {r.readMinutes} min read</p>
-          </Reveal>
+          <div className="settle mt-10">
+            <h1 className="text-[2.4rem] font-extrabold leading-[1.06] tracking-[-0.03em] text-ink sm:text-[3.4rem]">{r.title}</h1>
+            <p className="mt-6 text-xl leading-relaxed text-ink-soft">{r.summary}</p>
+            <p className="mt-6 text-[15px] font-bold text-ink-soft">
+              {r.category} <span aria-hidden>·</span> <Clock className="mb-0.5 inline h-4 w-4" aria-hidden /> {r.readMinutes} min read
+            </p>
+          </div>
         </Container>
       </header>
 
-      <Container className="max-w-3xl pb-16">
-        <div className="prose-safe text-lg text-charcoal">
+      <Container narrow className="py-14">
+        <div className="prose-safe text-lg text-ink-soft">
           {r.body.map((block, i) => (
             <div key={i}>
               {block.heading && <h2>{block.heading}</h2>}
@@ -55,10 +54,10 @@ export default async function ResourcePage({ params }: Params) {
         <Disclaimer className="mt-12" />
       </Container>
 
-      <section aria-labelledby="related-title" className="bg-sage-soft/50 py-20">
+      <section aria-labelledby="related-title" className="bg-mist py-20">
         <Container>
-          <h2 id="related-title" className="text-3xl font-extrabold text-forest">Keep reading</h2>
-          <ul className="mt-8 grid gap-5 md:grid-cols-3">
+          <h2 id="related-title" className="text-3xl font-extrabold text-ink">Keep reading</h2>
+          <ul className="mt-10 grid gap-x-6 gap-y-12 md:grid-cols-3">
             {related.map((x) => <li key={x.slug}><ResourceCard resource={x} /></li>)}
           </ul>
         </Container>

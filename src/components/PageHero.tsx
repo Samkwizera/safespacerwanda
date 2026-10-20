@@ -1,28 +1,26 @@
 import type { ReactNode } from "react";
-import { Container, Eyebrow } from "./Section";
-import { Reveal } from "./Reveal";
+import { cn } from "@/lib/cn";
+import { Container } from "./Section";
 
+const tones = { sky: "bg-sky", sun: "bg-sunsoft", sunsoft: "bg-sunsoft", blush: "bg-blush", mint: "bg-mint", white: "bg-white", mist: "bg-mist" };
+
+/** Inner-page opening: a soft colour field with the page title. */
 export function PageHero({
-  eyebrow,
   title,
   intro,
   children,
+  tone = "sky",
 }: {
-  eyebrow: string;
   title: ReactNode;
   intro?: ReactNode;
   children?: ReactNode;
+  tone?: keyof typeof tones;
 }) {
   return (
-    <section className="relative overflow-hidden pb-16 pt-36 sm:pb-24 sm:pt-44">
-      <div aria-hidden className="absolute -right-24 top-16 h-80 w-80 animate-float-slow rounded-full bg-peach/70 blur-3xl" />
-      <div aria-hidden className="absolute -left-32 bottom-0 h-72 w-72 animate-float rounded-full bg-sage/50 blur-3xl" />
-      <Container className="relative">
-        <Reveal>
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-6 max-w-4xl text-5xl font-extrabold leading-[1.02] text-forest sm:text-6xl lg:text-7xl">{title}</h1>
-          {intro && <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">{intro}</p>}
-        </Reveal>
+    <section className={cn("pb-14 pt-14 sm:pb-20 sm:pt-20", tones[tone])}>
+      <Container className="settle">
+        <h1 className="max-w-3xl text-[2.6rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-ink sm:text-6xl">{title}</h1>
+        {intro && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">{intro}</p>}
         {children}
       </Container>
     </section>

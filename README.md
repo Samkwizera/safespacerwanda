@@ -19,7 +19,7 @@ All copy lives in `src/content/`. You don't need to touch the components to chan
 | File | What it controls |
 | --- | --- |
 | `site.ts` | Name, contact email, social links, navigation |
-| `images.ts` | Photo slots. Put photos in `public/images/` and set `src`. Until then a branded illustration is shown. |
+| `images.ts` | Photo slots. Put photos in `public/images/` and set `src`. Until then a calm brand shape is shown. |
 | `events.ts` | Community events. Add only confirmed events. While the list is empty, a "Coming soon" state is shown. |
 | `resources.ts` | Resource articles and categories |
 | `src/components/sections/Founder.tsx` | Founder profile: quote and bio |

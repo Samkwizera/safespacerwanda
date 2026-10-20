@@ -16,10 +16,10 @@ export type CommunityEvent = {
 
 export const events: CommunityEvent[] = [];
 
-export const eventKinds: { kind: EventKind; blurb: string }[] = [
-  { kind: "Sports meetup", blurb: "Casual games where everyone gets to play, whatever your level." },
-  { kind: "Wellness conversation", blurb: "Small, friendly circles to talk about how life is really going." },
-  { kind: "Community event", blurb: "Days for coming together, meeting new people and having fun." },
-  { kind: "Volunteer opportunity", blurb: "Ways to help make activities happen for others." },
-  { kind: "Youth-led activity", blurb: "Ideas from young people, run by young people." },
+export const eventKinds: { kind: EventKind; plural: string; blurb: string }[] = [
+  { kind: "Sports meetup", plural: "Sports meetups", blurb: "Casual games where everyone gets to play, whatever your level." },
+  { kind: "Wellness conversation", plural: "Wellness conversations", blurb: "Small, friendly circles to talk about how life is really going." },
+  { kind: "Community event", plural: "Community events", blurb: "Days for coming together, meeting new people and having fun." },
+  { kind: "Volunteer opportunity", plural: "Volunteer opportunities", blurb: "Ways to help make activities happen for others." },
+  { kind: "Youth-led activity", plural: "Youth-led activities", blurb: "Ideas from young people, run by young people." },
 ];
