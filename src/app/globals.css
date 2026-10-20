@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #173c35;
+  --color-forest-deep: #0f2a25;
+  --color-sage: #a8c5b5;
+  --color-sage-soft: #dbe7e0;
+  --color-cream: #faf7f0;
+  --color-peach: #f3d8ca;
+  --color-peach-deep: #e8b9a1;
+  --color-charcoal: #26332f;
+  --color-muted: #55635e;
+
+  --font-display: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-blob: 2.5rem;
+  --animate-float: float 9s ease-in-out infinite;
+  --animate-float-slow: float 14s ease-in-out infinite;
+
+  @keyframes marquee {
+    to { transform: translateX(-50%); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+    50% { transform: translate3d(0, -14px, 0) rotate(3deg); }
+  }
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.025em; }
+::selection { background: var(--color-peach); color: var(--color-forest); }
+
+:focus-visible {
+  outline: 3px solid var(--color-forest);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+.on-dark :focus-visible { outline-color: var(--color-peach); }
+
+.prose-safe p { margin-bottom: 1.15rem; line-height: 1.8; }
+.prose-safe h2 { font-size: 1.6rem; font-weight: 700; color: var(--color-forest); margin: 2.5rem 0 1rem; }
+.prose-safe ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 1.25rem; }
+.prose-safe li { margin-bottom: .5rem; line-height: 1.7; }
+
+.grain::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .07; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+}
