@@ -12,13 +12,15 @@ export function Photo({
   className,
   priority = false,
   sizes = "(min-width: 1024px) 50vw, 100vw",
+  variant,
 }: {
   slot: ImageSlot;
   className?: string;
   priority?: boolean;
   sizes?: string;
+  variant?: number;
 }) {
-  if (!slot.src) return <ShapeField tone={slot.tone} label={slot.alt} className={cn("rounded-3xl", className)} />;
+  if (!slot.src) return <ShapeField tone={slot.tone} label={slot.alt} variant={variant} className={cn("rounded-3xl", className)} />;
   return (
     <div className={cn("relative overflow-hidden rounded-3xl", className)}>
       <Image src={slot.src} alt={slot.alt} fill priority={priority} sizes={sizes} className="object-cover" />

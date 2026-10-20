@@ -49,7 +49,7 @@ export function PillarFeatures() {
       <Container className="space-y-16 sm:space-y-24">
         {pillars.map((p, i) => (
           <article key={p.title} className="grid items-center gap-8 md:grid-cols-2 md:gap-14">
-            <Photo slot={p.image} className={cn("aspect-[4/3]", i % 2 === 1 && "md:order-2")} sizes="(min-width:768px) 50vw, 100vw" />
+            <Photo slot={p.image} variant={i} className={cn("aspect-[4/3]", i % 2 === 1 && "md:order-2")} sizes="(min-width:768px) 50vw, 100vw" />
             <div>
               <span aria-hidden className={cn("block h-5 w-5 rounded-full", p.dot)} />
               <h2 className="mt-5 text-[2rem] font-extrabold leading-[1.1] text-ink sm:text-[2.6rem]">{p.title}</h2>

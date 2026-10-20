@@ -34,11 +34,12 @@ export default function ResourcesPage() {
       </Container>
 
       <div className="space-y-16 py-16 sm:pb-28">
-        {categories.map((c) => {
+        {categories.map((c, ci) => {
           const items = resources.filter((r) => r.category === c.name);
           return (
             <section key={c.name} id={slug(c.name)} aria-labelledby={`${slug(c.name)}-title`} className="scroll-mt-24">
-              <Container className="grid gap-6 border-t border-line pt-10 lg:grid-cols-12 lg:gap-12">
+              <Container>
+                <div className="grid gap-6 border-t border-line pt-10 lg:grid-cols-12 lg:gap-12">
                 <div className="lg:col-span-4">
                   <h2 id={`${slug(c.name)}-title`} className="text-3xl font-extrabold leading-tight text-ink">{c.name}</h2>
                   <p className="mt-3 text-ink-soft">{c.description}</p>
@@ -46,11 +47,12 @@ export default function ResourcesPage() {
                 <div className="lg:col-span-8">
                   {items.length ? (
                     <ul className="-my-6 divide-y divide-line">
-                      {items.map((r) => <li key={r.slug}><ResourceRow resource={r} /></li>)}
+                      {items.map((r, i) => <li key={r.slug}><ResourceRow resource={r} variant={ci + i} /></li>)}
                     </ul>
                   ) : (
                     <p className="rounded-2xl bg-mist p-6 text-ink-soft">More reads are on the way.</p>
                   )}
+                </div>
                 </div>
               </Container>
             </section>

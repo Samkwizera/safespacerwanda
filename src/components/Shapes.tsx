@@ -75,9 +75,10 @@ function pick(seed: string) {
  * Soft colour field with an arrangement of the brand's two forms, used wherever
  * a photo hasn't been supplied yet. Without a label it is decorative.
  */
-export function ShapeField({ tone, label, seed, className }: { tone: Tone; label?: string; seed?: string; className?: string }) {
+export function ShapeField({ tone, label, seed, variant, className }: { tone: Tone; label?: string; seed?: string; variant?: number; className?: string }) {
   const f = fields[tone];
-  const draw = pick(seed ?? label ?? tone);
+  // Lists pass their index as `variant` so neighbouring slots never match.
+  const draw = variant === undefined ? pick(seed ?? label ?? tone) : arrangements[variant % arrangements.length];
   return (
     <div {...(label ? { role: "img", "aria-label": label } : { "aria-hidden": true })} className={cn("relative overflow-hidden", f.bg, className)}>
       <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" className="absolute inset-0 h-full w-full" aria-hidden>

@@ -58,7 +58,7 @@ export default async function ResourcePage({ params }: Params) {
         <Container>
           <h2 id="related-title" className="text-3xl font-extrabold text-ink">Keep reading</h2>
           <ul className="mt-10 grid gap-x-6 gap-y-12 md:grid-cols-3">
-            {related.map((x) => <li key={x.slug}><ResourceCard resource={x} /></li>)}
+            {related.map((x, i) => <li key={x.slug}><ResourceCard resource={x} variant={i} /></li>)}
           </ul>
         </Container>
       </section>

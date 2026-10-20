@@ -29,8 +29,8 @@ export default function Home() {
             <Button href="/resources" variant="secondary" className="self-start lg:self-auto">All resources</Button>
           </div>
           <ul className="mt-12 grid gap-x-6 gap-y-12 md:grid-cols-3">
-            {resources.slice(0, 3).map((r) => (
-              <li key={r.slug}><ResourceCard resource={r} /></li>
+            {resources.slice(0, 3).map((r, i) => (
+              <li key={r.slug}><ResourceCard resource={r} variant={i} /></li>
             ))}
           </ul>
           <Disclaimer className="mt-14" />
