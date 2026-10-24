@@ -1,118 +1,77 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useEffect, useState } from "react";
-import { nav } from "@/content/site";
-import { cn } from "@/lib/cn";
-import { Logo } from "./Logo";
+import { Menu, X } from "lucide-react";
+import { nav, site } from "@/content/site";
 import { Button } from "./Button";
+import { Wordmark } from "./Wordmark";
 
 export function Header() {
-  const pathname = usePathname();
-  const reduce = useReducedMotion();
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => setOpen(false), [pathname]);
-
-  useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
-
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-50 bg-white transition-shadow duration-200",
-        scrolled && !open && "shadow-[0_1px_0_#e3e6f0,0_6px_20px_-12px_rgba(27,33,64,.18)]",
-      )}
-    >
-      <a href="#main" className="sr-only rounded-full bg-blue px-4 py-2 font-bold text-white focus:not-sr-only focus:absolute focus:left-4 focus:top-3">
-        Skip to content
-      </a>
-      <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-6 px-5 sm:px-8">
-        <Logo />
-        <nav aria-label="Main" className="hidden lg:block">
-          <ul className="flex items-center gap-1">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  aria-current={isActive(item.href) ? "page" : undefined}
-                  className={cn(
-                    "rounded-full px-3.5 py-2 text-[15px] font-semibold transition-colors duration-200",
-                    isActive(item.href) ? "bg-sky text-blue" : "text-ink-soft hover:text-ink",
-                  )}
-                >
-                  {item.label}
+    <>
+      <div className="bg-forest px-4 py-2.5 text-center">
+        <p className="label text-[0.62rem] text-ivory/80 sm:text-[0.68rem]">{site.announcement}</p>
+      </div>
+      <header className="sticky top-3 z-50 px-3 pt-3 sm:px-8">
+        <nav
+          aria-label="Main"
+          className="mx-auto flex max-w-[1180px] items-center justify-between gap-4 rounded-full border border-line/70 bg-ivory-soft/90 py-2 pl-6 pr-2 shadow-[0_8px_30px_-18px_rgba(28,48,35,0.35)] backdrop-blur-md"
+        >
+          <Link href="/" className="shrink-0" onClick={() => setOpen(false)}>
+            <Wordmark />
+          </Link>
+          <ul className="hidden items-center gap-8 lg:flex">
+            {nav.map((n) => (
+              <li key={n.href}>
+                <Link href={n.href} className="text-[15px] text-ink-soft transition-colors hover:text-forest">
+                  {n.label}
                 </Link>
               </li>
             ))}
           </ul>
+          <div className="flex items-center gap-2">
+            <Button href="/#contact" className="hidden min-h-11 px-5 sm:inline-flex">
+              Join the Community
+            </Button>
+            <button
+              type="button"
+              aria-expanded={open}
+              aria-controls="mobile-menu"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((o) => !o)}
+              className="grid size-11 place-items-center rounded-full bg-forest text-ivory lg:hidden"
+            >
+              {open ? <X className="size-5" /> : <Menu className="size-5" />}
+            </button>
+          </div>
         </nav>
-        <div className="flex items-center gap-2">
-          <span className="hidden sm:block">
-            <Button href="/get-involved#join" size="sm">Join Our Community</Button>
-          </span>
-          <button
-            type="button"
-            onClick={() => setOpen((o) => !o)}
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close menu" : "Open menu"}
-            className="press relative grid h-11 w-11 place-items-center rounded-full bg-sky text-ink lg:hidden"
-          >
-            <span aria-hidden className={cn("absolute h-0.5 w-5 rounded bg-current transition-transform duration-200 ease-out", open ? "rotate-45" : "-translate-y-[4px]")} />
-            <span aria-hidden className={cn("absolute h-0.5 w-5 rounded bg-current transition-transform duration-200 ease-out", open ? "-rotate-45" : "translate-y-[4px]")} />
-          </button>
-        </div>
-      </div>
-
-      <AnimatePresence>
         {open && (
-          <motion.div
-            id="mobile-menu"
-            className="fixed inset-x-0 bottom-0 top-[72px] overflow-y-auto border-t border-line bg-white lg:hidden"
-            initial={{ opacity: 0, transform: reduce ? "none" : "translateY(-8px)" }}
-            animate={{ opacity: 1, transform: "translateY(0px)" }}
-            exit={{ opacity: 0, transition: { duration: 0.15 } }}
-            transition={{ duration: 0.22, ease: [0.23, 1, 0.32, 1] }}
-          >
-            <nav aria-label="Mobile" className="flex min-h-full flex-col justify-between px-5 pb-8 pt-4">
-              <ul>
-                {nav.map((item) => (
-                  <li key={item.href} className="border-b border-line">
-                    <Link
-                      href={item.href}
-                      aria-current={isActive(item.href) ? "page" : undefined}
-                      className={cn("block py-4 text-2xl font-extrabold tracking-[-0.02em]", isActive(item.href) ? "text-blue" : "text-ink")}
-                    >
-                      {item.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              <div className="pt-8">
-                <Button href="/get-involved#join" className="w-full">Join Our Community</Button>
-                <p className="mt-5 text-center text-[15px] text-ink-soft">A place to belong. A space to be yourself.</p>
-              </div>
-            </nav>
-          </motion.div>
+          <div id="mobile-menu" className="mx-auto mt-2 max-w-[1180px] rounded-[28px] border border-line/70 bg-ivory-soft p-3 shadow-xl lg:hidden">
+            <ul>
+              {nav.map((n) => (
+                <li key={n.href}>
+                  <Link href={n.href} onClick={() => setOpen(false)} className="block rounded-2xl px-4 py-3.5 font-serif text-2xl text-forest hover:bg-sage-mist">
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="p-2" onClick={() => setOpen(false)}>
+              <Button href="/#contact" className="w-full">Join the Community</Button>
+            </div>
+          </div>
         )}
-      </AnimatePresence>
-    </header>
+      </header>
+    </>
   );
 }

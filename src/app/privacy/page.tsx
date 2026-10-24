@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/content/site";
@@ -14,10 +15,7 @@ export default function PrivacyPage() {
       </p>
       <h2>What we collect</h2>
       <ul>
-        <li><strong>Community sign-ups:</strong> your name, email, age range, and optionally your general location and interests.</li>
-        <li><strong>Volunteer applications:</strong> your name, email, age range, how you&apos;d like to help, and your availability.</li>
-        <li><strong>Partner enquiries and contact messages:</strong> your name, email, organisation (if relevant), and your message.</li>
-        <li><strong>Newsletter:</strong> your email address.</li>
+        <li><strong>Interest form:</strong> your name, email, how you&apos;d like to get involved, and an optional message.</li>
       </ul>
       <p>
         We do <strong>not</strong> ask for health or medical information through our forms, and we ask that you don&apos;t
@@ -44,7 +42,7 @@ export default function PrivacyPage() {
       <h2>Your choices</h2>
       <p>
         You can ask to see, correct or delete your information at any time by emailing{" "}
-        <a href={`mailto:${site.email}`} className="font-semibold">{site.email}</a>.
+        {site.email ? <a href={`mailto:${site.email}`} className="font-semibold">{site.email}</a> : <Link href="/#contact">our contact form</Link>}.
       </p>
       <h2>Changes</h2>
       <p>If we update this policy, we&apos;ll change the date at the top of this page.</p>

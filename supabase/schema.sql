@@ -62,3 +62,16 @@ alter table volunteer_applications enable row level security;
 alter table partner_inquiries enable row level security;
 alter table contact_messages enable row level security;
 alter table newsletter_subscribers enable row level security;
+
+-- Single interest form used by the redesigned one-page site.
+create table if not exists interest_submissions (
+  id uuid primary key default gen_random_uuid(),
+  created_at timestamptz not null default now(),
+  name text not null,
+  email text not null,
+  interest text not null,
+  message text,
+  consent_given boolean not null,
+  consent_at timestamptz not null
+);
+alter table interest_submissions enable row level security;

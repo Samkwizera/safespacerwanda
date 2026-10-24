@@ -18,11 +18,7 @@ function rateLimited(key: string) {
 }
 
 const tables: Record<FormKind, string> = {
-  join: "community_signups",
-  volunteer: "volunteer_applications",
-  partner: "partner_inquiries",
-  contact: "contact_messages",
-  newsletter: "newsletter_subscribers",
+  interest: "interest_submissions",
 };
 
 function json(body: SubmitResult, status = 200) {
@@ -76,8 +72,6 @@ export async function POST(req: Request) {
 
   const { error } = await supabase.from(tables[kind]).insert(row);
   if (error) {
-    // Duplicate newsletter email: treat as success so we don't reveal who is subscribed.
-    if (kind === "newsletter" && error.code === "23505") return json({ ok: true });
     console.error(`[submit] insert into ${tables[kind]} failed:`, error.message);
     return json({ ok: false, error: "We couldn't save that just now. Please try again in a moment." }, 500);
   }

@@ -11,40 +11,16 @@ const email = z.string().trim().toLowerCase().email("Please enter a valid email 
 const consent = z.literal(true, { error: "Please confirm you agree so we can contact you." });
 const shortText = (max: number) => z.string().trim().max(max, `Please keep this under ${max} characters.`).optional().or(z.literal(""));
 
-export const ageRanges = ["16–17", "18–24", "25–30", "Over 30"] as const;
+export const interests = ["Participate", "Volunteer", "Partner", "General enquiry"] as const;
 
 export const schemas = {
-  join: z.object({
+  interest: z.object({
     name,
     email,
-    ageRange: z.enum(ageRanges, { error: "Please choose an age range." }),
-    location: shortText(80),
-    interests: z.array(z.enum(["Sports meetups", "Conversations", "Community events", "Awareness work"])).max(4).optional(),
+    interest: z.enum(interests, { error: "Please choose how you'd like to get involved." }),
+    message: shortText(1500),
     consent,
   }),
-  volunteer: z.object({
-    name,
-    email,
-    ageRange: z.enum(ageRanges, { error: "Please choose an age range." }),
-    skills: z.string().trim().min(10, "Tell us a little about how you'd like to help.").max(800),
-    availability: shortText(120),
-    consent,
-  }),
-  partner: z.object({
-    name,
-    email,
-    organization: z.string().trim().min(2, "Please share your organisation's name.").max(120),
-    idea: z.string().trim().min(20, "Share a few sentences about what you have in mind.").max(1500),
-    consent,
-  }),
-  contact: z.object({
-    name,
-    email,
-    subject: z.string().trim().min(3, "Add a short subject.").max(120),
-    message: z.string().trim().min(10, "Your message is a little short.").max(2000),
-    consent,
-  }),
-  newsletter: z.object({ email, consent }),
 };
 
 export type FormKind = keyof typeof schemas;

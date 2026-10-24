@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/content/site";
@@ -31,7 +32,7 @@ export default function TermsPage() {
       <h2>Contact</h2>
       <p>
         Questions about these terms? Email{" "}
-        <a href={`mailto:${site.email}`} className="font-semibold">{site.email}</a>.
+        {site.email ? <a href={`mailto:${site.email}`} className="font-semibold">{site.email}</a> : <Link href="/#contact">our contact form</Link>}.
       </p>
     </LegalPage>
   );

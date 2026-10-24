@@ -1,77 +1,81 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #1b2140;
-  --color-ink-soft: #4e5573;
-  --color-line: #e3e6f0;
-  --color-paper: #ffffff;
-  --color-mist: #f6f7fb;
+  /* Warm editorial palette: ivory paper, forest ink, sage and terracotta accents. */
+  --color-ivory: #f2efe4;
+  --color-ivory-soft: #f8f6ee;
+  --color-cream: #e9e4d4;
+  --color-forest: #1c3023;
+  --color-forest-soft: #2b4433;
+  --color-sage: #5f7a62;        /* italic emphasis on ivory: 4.6:1 */
+  --color-sage-pale: #dfe3d3;
+  --color-sage-mist: #e8e9dc;
+  --color-terracotta: #b0643f;
+  --color-terracotta-pale: #ecd5c3;
+  --color-ink: #1c2a21;
+  --color-ink-soft: #4f5a52;    /* body copy on ivory: 6.7:1 */
+  --color-line: #d6d1bf;
 
-  --color-blue: #3347e6;
-  --color-blue-deep: #2a3bc7;
-  --color-sun: #ffc845;
-  --color-coral: #ff7a66;
-
-  --color-sky: #eaf0ff;
-  --color-sunsoft: #fff3d3;
-  --color-blush: #ffe6e1;
-  --color-mint: #dff3e8;
-
-  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display), ui-serif, Georgia, serif;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-
-  @keyframes breathe {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.045); }
-  }
-  @keyframes settle {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: none; }
-  }
 }
 
 html {
   scroll-behavior: smooth;
-  scrollbar-color: #c9cee6 transparent;
+  scroll-padding-top: 7rem;
 }
 body {
-  background: var(--color-paper);
+  background: var(--color-ivory);
   color: var(--color-ink);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
-h1, h2, h3, h4 { letter-spacing: -0.025em; text-wrap: balance; }
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+  text-wrap: balance;
+}
 p { text-wrap: pretty; }
-::selection { background: var(--color-sun); color: var(--color-ink); }
-input, textarea { caret-color: var(--color-blue); }
-a { text-underline-offset: 0.2em; text-decoration-thickness: 1.5px; }
+::selection { background: var(--color-terracotta-pale); color: var(--color-ink); }
 
 :focus-visible {
-  outline: 3px solid var(--color-blue);
+  outline: 2px solid var(--color-terracotta);
   outline-offset: 3px;
-  border-radius: 8px;
+  border-radius: 6px;
 }
-.on-dark :focus-visible { outline-color: var(--color-sun); }
 
-/* Pressable elements: quick, subtle press feedback. */
-.press { transition: transform 160ms var(--ease-out), background-color 200ms ease, color 200ms ease, box-shadow 200ms ease; }
-.press:active { transform: scale(0.97); }
+/* Small uppercase section labels. */
+.label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
 
-/* The one authored entrance: the hero settles in once on load. */
-.settle { animation: settle 700ms var(--ease-out) both; }
+/* Gentle scroll reveal; content stays visible without JS. */
+.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.js [data-reveal].is-visible { opacity: 1; transform: none; }
 
-.prose-safe p { margin-bottom: 1.15rem; line-height: 1.75; }
-.prose-safe h2 { font-size: 1.6rem; font-weight: 800; color: var(--color-ink); margin: 2.75rem 0 0.9rem; letter-spacing: -0.02em; }
-.prose-safe ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 1.25rem; }
-.prose-safe li { margin-bottom: 0.5rem; line-height: 1.7; }
-.prose-safe li::marker { color: var(--color-blue); }
-.prose-safe a { color: var(--color-blue); text-decoration: underline; }
-.prose-safe strong { font-weight: 700; color: var(--color-ink); }
+.prose-legal p { margin-bottom: 1.15rem; line-height: 1.75; }
+.prose-legal h2 { font-size: 1.8rem; color: var(--color-forest); margin: 2.75rem 0 0.9rem; }
+.prose-legal ul { list-style: disc; padding-left: 1.4rem; margin-bottom: 1.25rem; }
+.prose-legal li { margin-bottom: 0.5rem; line-height: 1.7; }
+.prose-legal a { color: var(--color-forest); text-decoration: underline; }
+.prose-legal strong { font-weight: 600; color: var(--color-ink); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }

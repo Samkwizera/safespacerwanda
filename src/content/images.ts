@@ -1,22 +1,20 @@
 /**
- * Photography slots. Each slot has descriptive alt text and a brief for the
- * shot we want. Drop a real photo into /public/images and set `src` to use it,
- * e.g. src: "/images/hero.jpg". Until then a calm brand shape is shown.
+ * Photography slots. Drop a photo into /public/images and set `src`
+ * (e.g. "/images/hero.jpg") to replace the placeholder. Next/Image resizes
+ * and serves modern formats automatically.
  *
- * Use photos you have rights to, ideally of your own community (with consent).
+ * Use photos of your own community, taken with everyone's consent.
  */
-import type { Tone } from "@/components/Shapes";
-
-export type ImageSlot = { src?: string; alt: string; brief: string; tone: Tone };
+export type ImageSlot = { src?: string; alt: string; brief: string; tone: "sage" | "clay" | "sand" | "forest" };
 
 export const images = {
-  hero: { alt: "Young people sitting together on a grassy hillside, laughing", brief: "Friends together outdoors, golden hour", tone: "sky" },
-  story: { alt: "A small group of young people sitting in a circle on the grass, talking", brief: "A relaxed conversation circle outdoors", tone: "sun" },
-  founder: { alt: "Portrait of Samuel Kwizera Ihimbazwe, founder of SafeSpace Rwanda", brief: "Founder portrait", tone: "sky" },
-  move: { alt: "Two players high-fiving on a basketball court", brief: "Basketball, teamwork", tone: "mint" },
-  talk: { alt: "Young people in conversation, one listening closely", brief: "Open conversation", tone: "blush" },
-  grow: { alt: "A group of friends walking together on a hillside path", brief: "Friendship, outdoors", tone: "mint" },
-  aware: { alt: "Students gathered around a hand-painted poster about mental wellness", brief: "Awareness, community", tone: "sun" },
-  sports: { alt: "A basketball mid-air above a hoop, with players reaching for the rebound", brief: "Big editorial basketball shot", tone: "sky" },
-  community: { alt: "A crowd of young people cheering at a community event", brief: "Community event energy", tone: "blush" },
+  hero: { alt: "Young people laughing together on an outdoor basketball court in Kigali", brief: "Basketball, joy, golden light", tone: "clay" },
+  play: { alt: "Two friends high-fiving after a basketball game", brief: "Play & connect", tone: "sand" },
+  talk: { alt: "A small group sitting in a circle on the grass, deep in conversation", brief: "Open conversations", tone: "sage" },
+  grow: { alt: "Friends walking together along a hillside path", brief: "Grow together", tone: "clay" },
+  story: { alt: "A community gathering of young people outdoors, smiling and talking", brief: "Community, belonging", tone: "sage" },
+  storySmall: { alt: "A basketball resting on an outdoor court at sunset", brief: "Detail, court", tone: "sand" },
+  activityBall: { alt: "Players reaching for a rebound under the hoop", brief: "Basketball meetup", tone: "clay" },
+  activityTalk: { alt: "Young people listening to each other in a relaxed circle", brief: "Community conversation", tone: "sage" },
+  activityWell: { alt: "A group stretching together on the grass in the morning", brief: "Wellbeing activity", tone: "sand" },
 } satisfies Record<string, ImageSlot>;
