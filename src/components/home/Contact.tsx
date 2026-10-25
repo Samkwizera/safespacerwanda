@@ -22,6 +22,14 @@ export function Contact() {
               Or email <a href={`mailto:${site.email}`} className="text-forest underline">{site.email}</a>
             </p>
           )}
+          {site.social[0] && (
+            <p className="mt-2 text-ink-soft">
+              Follow us on Instagram at{" "}
+              <a href={site.social[0].href} className="text-forest underline" target="_blank" rel="noreferrer">
+                {site.social[0].label}
+              </a>
+            </p>
+          )}
           <p className="mt-10 max-w-sm border-l-2 border-terracotta pl-4 text-sm leading-relaxed text-ink-soft">
             If you or someone you know is in immediate danger, please contact local emergency services.
           </p>

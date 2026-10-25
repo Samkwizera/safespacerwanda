@@ -21,8 +21,7 @@ export function Story() {
           </h2>
           <div className="mt-8 max-w-lg space-y-5 text-lg leading-relaxed text-ink-soft">
             <p>
-              SafeSpace Rwanda was founded by Samuel Kwizera Ihimbazwe, out of a simple belief: that sport has a rare
-              power to bring young people together.
+              SafeSpace Rwanda grew from a simple belief: that sport has a rare power to bring young people together.
             </p>
             <p>
               On the court, people show up as themselves. That shared ground makes it easier to start the conversations

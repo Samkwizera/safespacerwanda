@@ -37,20 +37,21 @@ Wellbeing through belonging, with sport as the way in: "Sometimes, support start
 - Next.js 15 App Router, TypeScript, Tailwind CSS v4, Motion, Lucide. Deployed on Vercel.
 - All copy lives in `src/content/`, kept separate from components so a Kinyarwanda version can be added later. Layouts must survive longer translated strings.
 - Forms: zod validation on client and server, honeypot, minimum fill time, per-IP rate limit, required consent with a timestamp. Forms never show a false success and never ask for health information.
-- Still undecided: official email and social accounts, Kinyarwanda translation, emergency/referral contacts (to be verified before adding).
+- Official contact channels: `Safespacerwanda@gmail.com` and Instagram `@safespacerwanda`.
+- Still undecided: Kinyarwanda translation and emergency/referral contacts (to be verified before adding).
 
 ## Brand Commitments
 
 - Name: SafeSpace Rwanda.
 - Taglines, kept verbatim: "A place to belong. A space to be yourself." and "Creating space. Building belonging."
 - Voice: warm, plain, hopeful, honest about its role, never clinical.
-- The current logo mark and colours are **not** binding; the visual identity may be replaced.
+- The orange sunrise SafeSpace Rwanda logo supplied by the project owner is the current official mark.
 - Standing visual preference (chosen October 2026): the category standard, a calm, friendly community-wellbeing site played straight, at the craft level of Headspace. No novelty concept worlds.
 - The visual identity is never themed on sport or basketball. Sport stays in the content as one pillar among four, not as the look.
 
 ## Evidence on Hand
 
-- No real photos yet. `src/content/images.ts` defines photo slots with alt text and briefs; the site must look finished without photos and leave clear slots to fill.
+- No real SafeSpace Rwanda photos yet. The current slots use clearly documented Pexels stock photography and should be replaced with consented community photography when it becomes available.
 - No founder bio or quote yet (founder: Samuel Kwizera Ihimbazwe). Do not write one on his behalf.
 - No confirmed events. The empty "coming soon" state is the real state.
 - Resource articles exist in `src/content/resources.ts` and are pending professional review.

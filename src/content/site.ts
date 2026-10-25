@@ -9,13 +9,9 @@ export const site = {
     "SafeSpace Rwanda is a community initiative supporting young people's mental wellbeing through sports, connection and open conversations.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   announcement: "Building connection and wellbeing through sports and community.",
-  // TODO: replace with the official inbox once it exists. Leave "" to hide it.
-  email: "",
-  // TODO: add official account URLs. Entries with an empty href are hidden.
+  email: "Safespacerwanda@gmail.com",
   social: [
-    { label: "Instagram", href: "" },
-    { label: "LinkedIn", href: "" },
-    { label: "X", href: "" },
+    { label: "@safespacerwanda", href: "https://www.instagram.com/safespacerwanda/" },
   ],
 };
 

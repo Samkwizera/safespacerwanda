@@ -10,7 +10,7 @@ export function Footer() {
       <Container>
         <div className="grid gap-12 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
-            <Wordmark className="text-3xl" />
+            <Wordmark className="w-52" />
             <p className="mt-4 max-w-sm text-ink-soft">
               A community initiative supporting young people&apos;s mental wellbeing through sports, connection and open conversations.
             </p>
@@ -35,7 +35,11 @@ export function Footer() {
               )}
               {socials.length ? (
                 socials.map((s) => (
-                  <li key={s.label}><a href={s.href} className="text-forest hover:underline" target="_blank" rel="noreferrer">{s.label}</a></li>
+                  <li key={s.label}>
+                    <a href={s.href} className="text-forest hover:underline" target="_blank" rel="noreferrer">
+                      Instagram {s.label}
+                    </a>
+                  </li>
                 ))
               ) : (
                 <li className="text-ink-soft">Social channels coming soon</li>
